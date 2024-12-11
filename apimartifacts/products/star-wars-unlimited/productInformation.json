@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "Star Wars - Unlimited",
+    "description": "Star Wars - Unlimited",
+    "approvalRequired": false,
+    "state": "published",
+    "subscriptionRequired": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "apiopsteam1",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "",
+    "isCurrent": true,
+    "displayName": "ApiOps Demo",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://apim-apiops-dev-eastus2-001.azure-api.net/apiopsteam1",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

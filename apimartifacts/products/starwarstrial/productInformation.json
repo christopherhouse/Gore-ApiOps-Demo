@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "StarWarsTrial",
+    "description": "Star Wars trial product",
+    "approvalRequired": false,
+    "state": "published",
+    "subscriptionRequired": true
+  }
+}

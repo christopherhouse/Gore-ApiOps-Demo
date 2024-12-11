@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "HeaderMessage",
+    "secret": false,
+    "tags": [],
+    "value": "Hello world"
+  }
+}
