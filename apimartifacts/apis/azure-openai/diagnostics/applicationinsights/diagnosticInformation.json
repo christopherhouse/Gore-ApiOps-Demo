@@ -1,0 +1,42 @@
+{
+  "properties": {
+    "loggerId": "/subscriptions/8bd05b2f-62c5-4def-9869-f0617ebb3970/resourceGroups/RG-APIOPS-DEV-EASTUS2-001/providers/Microsoft.ApiManagement/service/apim-apiops-dev-eastus2-001/loggers/appi-apiops-dev-eastus2-001",
+    "alwaysLog": "allErrors",
+    "backend": {
+      "request": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      },
+      "response": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      }
+    },
+    "frontend": {
+      "request": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      },
+      "response": {
+        "body": {
+          "bytes": 0
+        },
+        "headers": []
+      }
+    },
+    "httpCorrelationProtocol": "Legacy",
+    "logClientIp": true,
+    "metrics": true,
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "fixed"
+    },
+    "verbosity": "information"
+  }
+}
