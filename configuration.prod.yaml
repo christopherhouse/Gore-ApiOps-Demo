@@ -1,0 +1,10 @@
+apimServiceName: apim-apiops-prod-eastus2-001
+namedValues:
+ - name: AppInsightsKey
+   properties:
+     keyVault:
+       secretIdentifier: https://kv-apiops-prod-eastus2.vault.azure.net/secrets/appInsightsKey
+backends:
+  - name: starwars
+    properties:
+      url: https://prod.swapi.dev/api
