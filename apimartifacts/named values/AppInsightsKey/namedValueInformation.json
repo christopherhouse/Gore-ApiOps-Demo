@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "AppInsightsKey",
+    "keyVault": {
+      "secretIdentifier": "https://kv-apiops-dev-eastus2.vault.azure.net/secrets/appInsightsKey"
+    },
+    "secret": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "properties": {
+    "path": "rt2",
+    "apiRevision": "1",
+    "authenticationSettings": {},
+    "description": "",
+    "isCurrent": true,
+    "displayName": "Retry #2",
+    "protocols": [
+      "https"
+    ],
+    "serviceUrl": "https://httpbin.org/status",
+    "subscriptionKeyParameterNames": {
+      "header": "Ocp-Apim-Subscription-Key",
+      "query": "subscription-key"
+    },
+    "subscriptionRequired": true
+  }
+}

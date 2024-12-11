@@ -1,0 +1,1002 @@
+openapi: 3.0.1
+info:
+  title: PS API
+  version: '2024-10-09'
+servers:
+  - url: https://apim-apiops-dev-eastus2-001.azure-api.net/ps/2024-10-09
+paths:
+  /api/actors/:
+    get:
+      tags:
+        - actors
+      summary: Get Actors
+      description: Get Actors
+      operationId: get_actors_api_actors__get
+      parameters:
+        - name: first_name
+          in: query
+          schema:
+            title: First Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Robert
+        - name: last_name
+          in: query
+          schema:
+            title: Last Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Webb
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Actors Api Actors  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Actor'
+              example:
+                - first_name: string
+                  last_name: string
+                  gender: { }
+                  participation_range: { }
+                  total_episodes: { }
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/audio/:
+    get:
+      tags:
+        - audio
+      summary: Get Audio
+      description: Get Audio
+      operationId: get_audio_api_audio__get
+      parameters:
+        - name: file_name
+          in: query
+          schema:
+            title: File Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: sperm
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Audio Api Audio  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Audio'
+              example:
+                - file_name: string
+                  file_type: string
+                  file_url: string
+                  character:
+                    first_name: string
+                    last_name: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/audio/random/:
+    get:
+      tags:
+        - audio
+      summary: Get Random Audio
+      description: Get Random Audio
+      operationId: get_random_audio_api_audio_random__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Audio'
+              example:
+                file_name: string
+                file_type: string
+                file_url: string
+                character:
+                  first_name: string
+                  last_name: string
+  /api/avatars/:
+    get:
+      tags:
+        - avatars
+      summary: Get Avatars
+      description: Get Avatars
+      operationId: get_avatars_api_avatars__get
+      parameters:
+        - name: file_name
+          in: query
+          schema:
+            title: File Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Andy
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Avatars Api Avatars  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Avatar'
+              example:
+                - file_name: string
+                  file_type: string
+                  file_url: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/avatars/random/:
+    get:
+      tags:
+        - avatars
+      summary: Get Random Avatar
+      description: Get Random Avatar
+      operationId: get_random_avatar_api_avatars_random__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Avatar'
+              example:
+                file_name: string
+                file_type: string
+                file_url: string
+  /api/characters/:
+    get:
+      tags:
+        - character
+      summary: Get Characters
+      description: Get Characters
+      operationId: get_characters_api_characters__get
+      parameters:
+        - name: first_name
+          in: query
+          schema:
+            title: First Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Jeremy
+        - name: last_name
+          in: query
+          schema:
+            title: Last Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Usborne
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Characters Api Characters  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Character'
+              example:
+                - first_name: string
+                  last_name: { }
+                  first_appearance: string
+                  last_appearance: string
+                  total_episodes: 0
+                  actor:
+                    first_name: string
+                    last_name: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/episodes/:
+    get:
+      tags:
+        - episodes
+      summary: Get Episodes
+      description: Get Episodes
+      operationId: get_episodes_api_episodes__get
+      parameters:
+        - name: title
+          in: query
+          schema:
+            title: Title
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Warring Factions
+        - name: start_date
+          in: query
+          schema:
+            title: Start Date
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: '2003-09-19'
+        - name: end_date
+          in: query
+          schema:
+            title: End Date
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: '2003-09-19'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Episodes Api Episodes  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Episode'
+              example:
+                - title: string
+                  overall_episode_number: 0
+                  episode_number: 0
+                  air_date: string
+                  directors: string
+                  writers: string
+                  synopsis: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/quotes/search/:
+    get:
+      tags:
+        - quotes
+      summary: Get Quotes
+      description: Get Quotes
+      operationId: get_quotes_api_quotes_search__get
+      parameters:
+        - name: quote
+          in: query
+          required: true
+          schema:
+            title: Quote
+            minLength: 8
+            type: string
+          example: everything's cool in Dobby Club.
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Quotes Api Quotes Search  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Line'
+              example:
+                - line_content: string
+                  spoken_by: string
+                  spoken_to: string
+                  script:
+                    series: 0
+                    episode: 0
+                  line_number: 0
+                  location:
+                    name: string
+                  meme_metadata:
+                    file_name: string
+                    file_type: string
+                    file_url: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/quotes/filter/:
+    get:
+      tags:
+        - quotes
+      summary: Get Quotes Filter
+      description: Get Quotes Filter
+      operationId: get_quotes_filter_api_quotes_filter__get
+      parameters:
+        - name: spoken_by
+          in: query
+          schema:
+            title: Spoken By
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Mark
+        - name: spoken_to
+          in: query
+          schema:
+            title: Spoken To
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: Jeremy
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Quotes Filter Api Quotes Filter  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/LineFilter'
+              example:
+                - spoken_by: string
+                  spoken_to: string
+                  line_content: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/quotes/random/:
+    get:
+      tags:
+        - quotes
+      summary: Get Random Quotes
+      description: Get Random Quotes
+      operationId: get_random_quotes_api_quotes_random__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LineFilter'
+              example:
+                spoken_by: string
+                spoken_to: string
+                line_content: string
+  /api/locations/:
+    get:
+      tags:
+        - locations
+      summary: Get Locations
+      description: Get Locations
+      operationId: get_locations_api_locations__get
+      parameters:
+        - name: name
+          in: query
+          schema:
+            title: Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: JLB
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Locations Api Locations  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Location'
+              example:
+                - name: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/memes/:
+    get:
+      tags:
+        - meme
+      summary: Get Memes
+      description: Get Memes
+      operationId: get_memes_api_memes__get
+      parameters:
+        - name: file_name
+          in: query
+          schema:
+            title: File Name
+            type: string
+            anyOf:
+              - type: string
+              - type: 'null'
+          example: everythings-cool-in-dobby-club
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Memes Api Memes  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Meme'
+              example:
+                - file_name: string
+                  file_type: string
+                  file_url: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/memes/random/:
+    get:
+      tags:
+        - meme
+      summary: Get Random Meme
+      description: Get Random Meme
+      operationId: get_random_meme_api_memes_random__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Meme'
+              example:
+                file_name: string
+                file_type: string
+                file_url: string
+  '/api/scripts/{series_number}/{episode_number}':
+    get:
+      tags:
+        - scripts
+      summary: Get Script
+      description: Get Script
+      operationId: get_script_api_scripts__series_number___episode_number__get
+      parameters:
+        - name: series_number
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/SeriesURLChoices'
+        - name: episode_number
+          in: path
+          required: true
+          schema:
+            $ref: '#/components/schemas/EpisodeURLChoices'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Script Api Scripts  Series Number   Episode Number  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Script'
+              example:
+                - series: 0
+                  episode: 0
+                  writers: string
+                  script_content: string
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /api/series/:
+    get:
+      tags:
+        - series
+      summary: Get Series
+      description: Get Series
+      operationId: get_series_api_series__get
+      parameters:
+        - name: series_number
+          in: query
+          schema:
+            title: Series Number
+            type: string
+            anyOf:
+              - $ref: '#/components/schemas/SeriesURLChoices'
+              - type: 'null'
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                title: Response Get Series Api Series  Get
+                type: array
+                items:
+                  $ref: '#/components/schemas/Series'
+              example:
+                - title: string
+                  description: string
+                  network: string
+                  premier_date: string
+                  finale_date: string
+                  number_of_episodes: 0
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+              example:
+                detail:
+                  - loc:
+                      - { }
+                    msg: string
+                    type: string
+  /:
+    get:
+      summary: Root
+      description: Root
+      operationId: root__get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: { }
+components:
+  schemas:
+    Actor:
+      title: Actor
+      required:
+        - first_name
+        - last_name
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+        gender:
+          title: Gender
+          anyOf:
+            - type: string
+            - type: 'null'
+        participation_range:
+          title: Participation Range
+          anyOf:
+            - type: string
+            - type: 'null'
+        total_episodes:
+          title: Total Episodes
+          anyOf:
+            - type: integer
+            - type: 'null'
+    ActorCharacter:
+      title: ActorCharacter
+      required:
+        - first_name
+        - last_name
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+    Audio:
+      title: Audio
+      required:
+        - file_name
+        - file_type
+        - file_url
+      type: object
+      properties:
+        file_name:
+          title: File Name
+          type: string
+        file_type:
+          title: File Type
+          type: string
+        file_url:
+          title: File Url
+          type: string
+        character:
+          anyOf:
+            - $ref: '#/components/schemas/CharacterAudio'
+            - type: 'null'
+    Avatar:
+      title: Avatar
+      required:
+        - file_name
+        - file_type
+        - file_url
+      type: object
+      properties:
+        file_name:
+          title: File Name
+          type: string
+        file_type:
+          title: File Type
+          type: string
+        file_url:
+          title: File Url
+          type: string
+    Character:
+      title: Character
+      required:
+        - first_name
+        - first_appearance
+        - last_appearance
+        - total_episodes
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          anyOf:
+            - type: string
+            - type: 'null'
+        first_appearance:
+          title: First Appearance
+          type: string
+        last_appearance:
+          title: Last Appearance
+          type: string
+        total_episodes:
+          title: Total Episodes
+          type: integer
+        actor:
+          anyOf:
+            - $ref: '#/components/schemas/ActorCharacter'
+            - type: 'null'
+    CharacterAudio:
+      title: CharacterAudio
+      required:
+        - first_name
+        - last_name
+      type: object
+      properties:
+        first_name:
+          title: First Name
+          type: string
+        last_name:
+          title: Last Name
+          type: string
+    Episode:
+      title: Episode
+      required:
+        - title
+        - overall_episode_number
+        - episode_number
+        - air_date
+        - directors
+        - writers
+        - synopsis
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        overall_episode_number:
+          title: Overall Episode Number
+          type: integer
+        episode_number:
+          title: Episode Number
+          type: integer
+        air_date:
+          title: Air Date
+          type: string
+          format: date-time
+        directors:
+          title: Directors
+          type: string
+        writers:
+          title: Writers
+          type: string
+        synopsis:
+          title: Synopsis
+          type: string
+    EpisodeURLChoices:
+      title: EpisodeURLChoices
+      enum:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+      type: string
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    Line:
+      title: Line
+      required:
+        - line_content
+        - spoken_by
+        - spoken_to
+        - script
+        - line_number
+        - location
+      type: object
+      properties:
+        line_content:
+          title: Line Content
+          type: string
+        spoken_by:
+          title: Spoken By
+          type: string
+        spoken_to:
+          title: Spoken To
+          type: string
+        script:
+          anyOf:
+            - $ref: '#/components/schemas/LineScript'
+            - type: 'null'
+        line_number:
+          title: Line Number
+          type: integer
+        location:
+          anyOf:
+            - $ref: '#/components/schemas/Location'
+            - type: 'null'
+        meme_metadata:
+          anyOf:
+            - $ref: '#/components/schemas/Meme'
+            - type: 'null'
+    LineFilter:
+      title: LineFilter
+      required:
+        - spoken_by
+        - spoken_to
+        - line_content
+      type: object
+      properties:
+        spoken_by:
+          title: Spoken By
+          type: string
+        spoken_to:
+          title: Spoken To
+          type: string
+        line_content:
+          title: Line Content
+          type: string
+    LineScript:
+      title: LineScript
+      required:
+        - series
+        - episode
+      type: object
+      properties:
+        series:
+          title: Series
+          type: integer
+        episode:
+          title: Episode
+          type: integer
+    Location:
+      title: Location
+      required:
+        - name
+      type: object
+      properties:
+        name:
+          title: Name
+          type: string
+    Meme:
+      title: Meme
+      required:
+        - file_name
+        - file_type
+        - file_url
+      type: object
+      properties:
+        file_name:
+          title: File Name
+          type: string
+        file_type:
+          title: File Type
+          type: string
+        file_url:
+          title: File Url
+          type: string
+    Script:
+      title: Script
+      required:
+        - series
+        - episode
+        - writers
+        - script_content
+      type: object
+      properties:
+        series:
+          title: Series
+          type: integer
+        episode:
+          title: Episode
+          type: integer
+        writers:
+          title: Writers
+          type: string
+        script_content:
+          title: Script Content
+          type: string
+    Series:
+      title: Series
+      required:
+        - title
+        - description
+        - network
+        - premier_date
+        - finale_date
+        - number_of_episodes
+      type: object
+      properties:
+        title:
+          title: Title
+          type: string
+        description:
+          title: Description
+          type: string
+        network:
+          title: Network
+          type: string
+        premier_date:
+          title: Premier Date
+          type: string
+          format: date-time
+        finale_date:
+          title: Finale Date
+          type: string
+          format: date-time
+        number_of_episodes:
+          title: Number Of Episodes
+          type: integer
+    SeriesURLChoices:
+      title: SeriesURLChoices
+      enum:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+        - '7'
+        - '8'
+        - '9'
+      type: string
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

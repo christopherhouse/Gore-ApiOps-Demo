@@ -1,0 +1,29 @@
+openapi: 3.0.1
+info:
+  title: ApiOps Demo
+  description: ''
+  version: '1.0'
+servers:
+  - url: https://apim-apiops-dev-eastus2-001.azure-api.net/apiopsteam1
+paths:
+  /operation:
+    get:
+      summary: Operation
+      description: Operation
+      operationId: operation
+      responses:
+        '200':
+          description: ''
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
