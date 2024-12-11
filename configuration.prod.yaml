@@ -10,7 +10,7 @@ backends:
       url: https://prod.swapi.dev/api
   - name: azure-openai-openai-endpoint
     properties:
-      url: https://ai-apiops-dev-eastus2-001.openai.azure.com/openai
+      url: https://ai-apiops-prod-eastus2-001.openai.azure.com/openai
 apis:
  - name: azure-openapi
    properties:
