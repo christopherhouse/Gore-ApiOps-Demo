@@ -4,6 +4,10 @@ namedValues:
    properties:
      keyVault:
        secretIdentifier: https://kv-apiops-prod-eastus2.vault.azure.net/secrets/appInsightsKey
+ - name: 6759fc1e01234e1afc17c083
+   properties:
+     keyVault:
+       secretIdentifier: https://kv-apiops-prod-eastus2.vault.azure.net/secrets/openai-appinsights-key
 backends:
   - name: starwars
     properties:
