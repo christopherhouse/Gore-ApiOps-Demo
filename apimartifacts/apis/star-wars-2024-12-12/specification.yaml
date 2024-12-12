@@ -1,0 +1,81 @@
+openapi: 3.0.1
+info:
+  title: Star Wars
+  description: API for retrieving info about the Star Wars universe
+  version: '2024-12-12'
+servers:
+  - url: https://apim-apiops-dev-eastus2-001.azure-api.net/2024-12-12
+paths:
+  /people:
+    get:
+      tags:
+        - StarWars
+      summary: Get People
+      description: Gets a list of Star Wars people
+      operationId: getPeople
+      responses:
+        '200':
+          description: 'Success, contains a list of Star Wars people'
+  '/people/{id}':
+    get:
+      summary: Get Person by Id
+      description: Get Person by Id
+      operationId: getPersonById
+      parameters:
+        - name: id
+          in: path
+          description: Identifier of person to return
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: 'Success, contains a Star Wars person'
+          content:
+            application/json: { }
+        '404':
+          description: Person not found
+  /films:
+    get:
+      tags:
+        - StarWars
+      summary: Get Films
+      description: Get Films
+      operationId: get-films
+      responses:
+        '200':
+          description: ''
+  '/films/{id}':
+    get:
+      summary: Get Films by ID
+      description: Get Films by ID
+      operationId: get-films-by-id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: ''
+      responses:
+        '200':
+          description: ''
+  /planets:
+    get:
+      summary: Get Planets
+      operationId: get-planets
+      responses:
+        '200':
+          description: 
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]
