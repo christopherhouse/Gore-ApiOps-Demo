@@ -10,10 +10,11 @@ paths:
   /get:
     post:
       summary: POST
+      description: POST
       operationId: post
       responses:
         '200':
-          description: 
+          description: ''
 components:
   securitySchemes:
     apiKeyHeader:

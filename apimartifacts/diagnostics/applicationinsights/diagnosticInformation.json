@@ -5,13 +5,13 @@
     "backend": {
       "request": {
         "body": {
-          "bytes": 8192
+          "bytes": 0
         },
         "headers": []
       },
       "response": {
         "body": {
-          "bytes": 8192
+          "bytes": 0
         },
         "headers": []
       }
@@ -19,19 +19,20 @@
     "frontend": {
       "request": {
         "body": {
-          "bytes": 8192
+          "bytes": 0
         },
         "headers": []
       },
       "response": {
         "body": {
-          "bytes": 8192
+          "bytes": 0
         },
         "headers": []
       }
     },
     "httpCorrelationProtocol": "Legacy",
     "logClientIp": true,
+    "metrics": true,
     "sampling": {
       "percentage": 100,
       "samplingType": "fixed"
