@@ -7,13 +7,19 @@
         "body": {
           "bytes": 0
         },
-        "headers": []
+        "headers": [
+          "Accept-Language",
+          "Content-Type"
+        ]
       },
       "response": {
         "body": {
           "bytes": 0
         },
-        "headers": []
+        "headers": [
+          "Accept-Language",
+          "Content-Type"
+        ]
       }
     },
     "frontend": {
@@ -21,13 +27,19 @@
         "body": {
           "bytes": 0
         },
-        "headers": []
+        "headers": [
+          "Accept-Language",
+          "Content-Type"
+        ]
       },
       "response": {
         "body": {
           "bytes": 0
         },
-        "headers": []
+        "headers": [
+          "Accept-Language",
+          "Content-Type"
+        ]
       }
     },
     "httpCorrelationProtocol": "Legacy",
