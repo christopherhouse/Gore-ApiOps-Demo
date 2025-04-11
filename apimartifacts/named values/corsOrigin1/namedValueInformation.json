@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "displayName": "corsOrigin1",
+    "secret": false,
+    "tags": [],
+    "value": "https://myawesomespa.com/"
+  }
+}

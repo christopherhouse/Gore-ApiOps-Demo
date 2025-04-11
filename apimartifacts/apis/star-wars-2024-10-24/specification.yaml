@@ -4,7 +4,8 @@ info:
   description: API for retrieving info about the Star Wars universe
   version: '2024-10-24'
 servers:
-  - url: https://apim-apiops-dev-eastus2-001.azure-api.net/2024-10-24
+  - url: https://api-2.chrishou.se/2024-10-24
+  - url: https://www.chrishou.se/2024-10-24
 paths:
   /people:
     get:

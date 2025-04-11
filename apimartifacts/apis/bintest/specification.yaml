@@ -1,25 +1,19 @@
 openapi: 3.0.1
 info:
-  title: 'Retry #2'
+  title: bintest
   description: ''
   version: '1.0'
 servers:
-  - url: https://api-2.chrishou.se/rt2
-  - url: https://www.chrishou.se/rt2
+  - url: https://api-2.chrishou.se/bintest
+  - url: https://www.chrishou.se/bintest
 paths:
-  /429:
+  /get:
     post:
-      summary: '429'
-      description: '429'
-      operationId: '429'
-      requestBody:
-        content:
-          application/json:
-            example:
-              message: Hello
+      summary: POST
+      operationId: post
       responses:
         '200':
-          description: ''
+          description: 
 components:
   securitySchemes:
     apiKeyHeader:
